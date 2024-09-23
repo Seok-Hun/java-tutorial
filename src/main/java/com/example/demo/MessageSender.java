@@ -4,12 +4,17 @@ import lombok.Builder;
 import lombok.ToString;
 
 @ToString
-@Builder
 public class MessageSender {
     private String receiver;
     private String sender;
     private String title;
     private String message;
+
+    @Builder
+    private MessageSender(String receiver, String sender, String title, String message) {
+        this.receiver = receiver;
+        this.sender = sender;
+    }
 
     public static class MessageSenderBuilder {
         public MessageSenderBuilder sender(String sender) {
