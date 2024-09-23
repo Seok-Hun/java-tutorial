@@ -11,7 +11,8 @@ import org.springframework.util.StringUtils;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        RacingCar racingCar = new RacingCar(5, 3);
+        RacingCar racingCar = new RacingCar();
+        racingCar.input(5, 3);
         racingCar.play();
     }
 

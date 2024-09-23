@@ -1,12 +1,10 @@
 package com.example.demo;
 
 public class RacingCar {
-    // 불변성 : final로 인해 변하지 않음
     private final int players;
     private final int count;
 
-    // 완전성 : 객체 초기화
-    public RacingCar(int players, int count) {
+    public void input(int players, int count) {
         this.players = players;
         this.count = count;
     }
