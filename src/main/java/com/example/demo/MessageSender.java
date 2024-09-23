@@ -10,4 +10,14 @@ public class MessageSender {
     private String sender;
     private String title;
     private String message;
+
+    public static class MessageSenderBuilder {
+        public MessageSenderBuilder sender(String sender) {
+            if (!sender.equals("전송자")) {
+                throw new RuntimeException("sender가 올바르지 않음");
+            }
+            this.sender = sender;
+            return this;
+        }
+    }
 }
