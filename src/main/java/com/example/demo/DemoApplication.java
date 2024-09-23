@@ -11,9 +11,24 @@ import org.springframework.util.StringUtils;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        RacingCar racingCar = new RacingCar();
-        racingCar.input(5, 3);
-        racingCar.play();
-    }
+        String type = "감사";
+        MessageSender.MessageSenderBuilder messageSenderBuilder = MessageSender.builder();
+        if (type.equals("감사")) {
+            messageSenderBuilder
+                    .title("감사합니다.")
+                    .message("감사 내용");
+        }
+        if (type.equals("안녕")) {
+            messageSenderBuilder
+                    .title("안녕하세요.")
+                    .message("인사 내용");
+        }
+        messageSenderBuilder
+                .receiver("받는 사람")
+                .sender("보낸 사람");
 
+        MessageSender messageSender = messageSenderBuilder.build();
+
+        System.out.println(messageSender);
+    }
 }
