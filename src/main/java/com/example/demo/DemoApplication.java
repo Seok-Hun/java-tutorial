@@ -23,7 +23,12 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         TravelService travelService = new TravelService();
-        travelService.reservation();
+        try {
+            travelService.reservation();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
 //        try {
 //            connect("admi", "1234");
 //        } catch (CustomException e) {
