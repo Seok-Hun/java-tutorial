@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.exception.CustomException;
+import com.example.demo.travel.TravelService;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.util.StringUtils;
 
@@ -21,19 +22,23 @@ public class DemoApplication {
     }
 
     public static void main(String[] args) {
-        try {
-            connect("admi", "1234");
-        } catch (CustomException e) {
-            System.out.println(String.format(
-                    "[%s] {priority: %s} %s",
-                    e.getType(),
-                    e.getPriority(),
-                    e.getMessage()
-            ));
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        TravelService travelService = new TravelService();
+        travelService.reservation();
+//        try {
+//            connect("admi", "1234");
+//        } catch (CustomException e) {
+//            System.out.println(String.format(
+//                    "[%s] {priority: %s} %s",
+//                    e.getType(),
+//                    e.getPriority(),
+//                    e.getMessage()
+//            ));
+////            e.printStackTrace();
+//            System.out.println(e.getMessage());
+//        } catch (Exception e) {
+////            e.printStackTrace();
+//            System.out.println(e.getMessage());
+//        }
     }
 
 }
