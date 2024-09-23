@@ -12,7 +12,7 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         Member member = new Member("A", "hamer1233@naver.com");
-        MemberResponseDto memberResponseDto = new MemberResponseDto(member);
+        MemberResponseDto memberResponseDto = MemberResponseDto.from(member);
         System.out.println(memberResponseDto);
     }
 
