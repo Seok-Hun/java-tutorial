@@ -3,18 +3,15 @@ package com.example.demo;
 import lombok.Builder;
 import lombok.ToString;
 
+@Builder
 @ToString
 public class MessageSender {
     private String receiver;
     private String sender;
-    private String title;
-    private String message;
-
-    @Builder
-    private MessageSender(String receiver, String sender, String title, String message) {
-        this.receiver = receiver;
-        this.sender = sender;
-    }
+    @Builder.Default
+    private String title = "기본 제목";
+    @Builder.Default
+    private String message = "기본 메시지";
 
     public static class MessageSenderBuilder {
         public MessageSenderBuilder sender(String sender) {

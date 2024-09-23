@@ -23,9 +23,6 @@ public class DemoApplication {
                     .title("안녕하세요.")
                     .message("인사 내용");
         }
-        messageSenderBuilder
-                .receiver("받는 사람")
-                .sender("보낸 사람");
 
         MessageSender messageSender = messageSenderBuilder.build();
 
