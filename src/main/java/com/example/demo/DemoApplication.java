@@ -11,9 +11,8 @@ import org.springframework.util.StringUtils;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        Member member = new Member("A", "hamer1233@naver.com");
-        MemberResponseDto memberResponseDto = MemberResponseDto.from(member);
-        System.out.println(memberResponseDto);
+        RacingCar racingCar = new RacingCar(5, 3);
+        racingCar.play();
     }
 
 }
