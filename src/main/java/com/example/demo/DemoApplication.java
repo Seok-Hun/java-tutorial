@@ -1,49 +1,25 @@
 package com.example.demo;
 
+import com.example.demo.admin.Administrator;
 import com.example.demo.exception.CustomException;
+import com.example.demo.member.Member;
 import com.example.demo.travel.TravelService;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.util.StringUtils;
 
 @SpringBootApplication
 public class DemoApplication {
-    public static void connect(String username, String password) {
-        if (!StringUtils.hasText(username)) {
-            throw new CustomException("NO_USERNAME", 3, "아이디를 입력하시오");
-        }
-        if (!StringUtils.hasText(password)) {
-            throw new CustomException("NO_PASSWORD", 3, "비밀번호를 입력하시오");
-        }
-        if (username.equals("admin") && password.equals("1234")) {
-            System.out.println("통과");
-        } else {
-            throw new CustomException("CONNECTION_ERROR", 3, "데이터베이스 에러");
-        }
-    }
 
     public static void main(String[] args) {
-        TravelService travelService = new TravelService();
-        try {
-            travelService.reservation();
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-        }
-//        try {
-//            connect("admi", "1234");
-//        } catch (CustomException e) {
-//            System.out.println(String.format(
-//                    "[%s] {priority: %s} %s",
-//                    e.getType(),
-//                    e.getPriority(),
-//                    e.getMessage()
-//            ));
-////            e.printStackTrace();
-//            System.out.println(e.getMessage());
-//        } catch (Exception e) {
-////            e.printStackTrace();
-//            System.out.println(e.getMessage());
-//        }
+        Member member1 = new Member("Kang", "hamer1233@naver.com");
+        Member member2 = new Member("Seok", "hamer5599@naver.com");
+        System.out.println(member1.getName());
+        System.out.println(member2.getName());
+
+        Administrator administrator1 = new Administrator("A", "abcd@naver.com", "DEV");
+        Administrator administrator2 = new Administrator("B", "efgh@naver.com", "DEV");
+        System.out.println(administrator1);
+        System.out.println(administrator2);
     }
 
 }
