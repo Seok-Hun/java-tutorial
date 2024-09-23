@@ -2,11 +2,13 @@ package com.example.demo.member;
 
 import lombok.ToString;
 
+import java.util.Objects;
+
 @ToString
 public class MemberResponseDto {
     private Integer id;
     private String name;
-    private static int count = 0;
+    private static MemberResponseDto entity;
 
     private MemberResponseDto(Integer id, String name) {
         this.id = id;
@@ -14,10 +16,10 @@ public class MemberResponseDto {
     }
 
     public static MemberResponseDto from(Member member) {
-        count += 1;
-        if (count > 10) {
-            throw new RuntimeException("MemberResponseDto 객체는 10개 이상 생성 불가");
+        if (Objects.isNull(entity)) {
+            entity = new MemberResponseDto(member.getId(), member.getName());
+            return entity;
         }
-        return new MemberResponseDto(member.getId(), member.getName());
+        return entity;
     }
 }
