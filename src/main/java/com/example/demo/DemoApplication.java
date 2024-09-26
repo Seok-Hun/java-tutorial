@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.hero.Garen;
+import com.example.demo.product.Tax;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,7 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        Garen garen = new Garen();
-        garen.combo();
+        Tax tax = new Tax(100, 20);
+        tax.print();
+        tax.print(10);
     }
 }
