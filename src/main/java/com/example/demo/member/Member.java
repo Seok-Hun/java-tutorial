@@ -2,17 +2,17 @@ package com.example.demo.member;
 
 import lombok.*;
 
-@Setter
-@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
-@EqualsAndHashCode
 public class Member {
     private Integer id;
     private String name;
     private int age;
     private String email;
 
-//    public boolean equals(Member operand) {
-//        return id.equals(operand.id) && name.equals(operand.name) && age == operand.age && email.equals(operand.email);
-//    }
+    // 정적 팩토리 메서드
+    // name을 받고 이를 이용해 Member 객체 생성
+    public static Member of(String name) {
+        return new Member(1, name, 0, "undefined");
+    }
 }
