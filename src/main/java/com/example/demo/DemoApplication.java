@@ -9,10 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        Member kang = new Member(1, "kang");
+        Member member = new Member(1, "Kang");
+        member.school = "가천대";
+        log.info(Member.school);
 
-        // 불가
-        kang.setId(2);
-        kang.setName("kang");
+        Member.Item item = new Member(2, "Kang2").new Item();
+        Member.Item_Static itemStatic = new Member.Item_Static();
     }
 }
