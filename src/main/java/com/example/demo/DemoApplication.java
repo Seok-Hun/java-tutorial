@@ -11,8 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        Hero hero = new IntelligenceHero();
-        hero.attack();
-        hero.ultimate();
+        IntelligenceHero<Integer> hero = new IntelligenceHero<>();
+        hero.attack(3);
+        hero.ultimate(5);
     }
 }

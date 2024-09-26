@@ -1,7 +1,7 @@
 package com.example.demo.hero;
 
-public interface Hero {
-    void attack();
+public interface Hero<Asdf, T> {
+    T attack(Asdf element);
 
-    void ultimate();
+    void ultimate(Asdf element);
 }
