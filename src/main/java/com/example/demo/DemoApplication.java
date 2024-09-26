@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.member.Member;
+import com.example.demo.member.MemberVO;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -19,6 +20,8 @@ public class DemoApplication {
         member2.setEmail("kang@gmail.com");
         member2.setAge(10);
 
-        log.info(member1.equals(member2));
+        MemberVO memberVO = new MemberVO(member1.getId(), member1.getName(), member1.getAge(), member1.getEmail());
+
+        log.info(memberVO);
     }
 }
