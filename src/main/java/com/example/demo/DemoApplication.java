@@ -1,31 +1,20 @@
 package com.example.demo;
 
-import com.example.demo.exception.CustomException;
 import com.example.demo.member.Member;
-import com.example.demo.member.MemberResponseDto;
-import com.example.demo.travel.TravelService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.util.StringUtils;
 
+@Log4j2
 @SpringBootApplication
 public class DemoApplication {
 
     public static void main(String[] args) {
-        String type = "감사";
-        MessageSender.MessageSenderBuilder messageSenderBuilder = MessageSender.builder();
-        if (type.equals("감사")) {
-            messageSenderBuilder
-                    .title("감사합니다.")
-                    .message("감사 내용");
-        }
-        if (type.equals("안녕")) {
-            messageSenderBuilder
-                    .title("안녕하세요.")
-                    .message("인사 내용");
-        }
+        Member member = new Member(0, "Kang", 26, "hamer1233@naver.com");
 
-        MessageSender messageSender = messageSenderBuilder.build();
-
-        System.out.println(messageSender);
+        log.info(member.getName());
+        log.info(member.getEmail());
+        
+        member.setName("Kang2");
+        member.setEmail("hamer1234@naver.com");
     }
 }
