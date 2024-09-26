@@ -1,11 +1,16 @@
 package com.example.demo.member;
 
 import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 
-@Data
+@AllArgsConstructor
+@Setter
+@Slf4j
 public class Member {
     private final Integer id;
     private String name;
-    private int age;
-    private String email;
+
+    public final void print() {
+        log.info(name);
+    }
 }
