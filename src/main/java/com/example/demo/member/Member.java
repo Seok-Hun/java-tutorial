@@ -1,10 +1,8 @@
 package com.example.demo.member;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+@ToString(exclude = {"email"}) // @ToString(of = {"id", "name", "age"})
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
     private Integer id;
@@ -13,10 +11,10 @@ public class Member {
     private String name;
     @Getter
     @Setter(AccessLevel.PRIVATE)
-    int age;
+    private int age;
     @Getter
     @Setter(AccessLevel.PUBLIC)
-    String email;
+    private String email;
 
     public void validAndSetAge(int age) {
         if (age < 30) {
