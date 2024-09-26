@@ -9,7 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        Member member = new Member(1, "Kang");
+        Member member = new Member();
+        member.setId(1);
+        member.setName("Kang");
         member.setEmail("hamer1233@naver.com");
         member.setAge(20);
 

@@ -3,11 +3,11 @@ package com.example.demo.member;
 import lombok.*;
 
 @Setter
-@RequiredArgsConstructor
+@NoArgsConstructor
 @ToString
 public class Member {
-    private final Integer id;
-    private final String name;
+    private Integer id;
+    private String name;
     private int age;
     private String email;
 }
